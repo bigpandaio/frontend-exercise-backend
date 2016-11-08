@@ -4,8 +4,9 @@
 
 Make sure that you use Serverless v1.
 
-1. Run `npm install`
-2. Deploy with `serverless deploy`
+1. Run `npm install -g serverless`
+2. Run `npm install`
+3. Deploy with `serverless deploy`
 
 ## How to use
 
