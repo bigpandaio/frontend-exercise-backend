@@ -1,0 +1,12 @@
+{
+  "name": "exercise-backend",
+  "version": "0.1.0",
+  "description": "Frontend Exercise Backend",
+  "author": "erikzaadi",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "2.6.7",
+    "lorem-ipsum": "1.0.3",
+    "uuid": "2.0.3"
+  }
+}
