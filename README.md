@@ -17,6 +17,14 @@ Simply perform requests against the exposed endpoints:
 curl -X POST https://XXXX.execute-api.region.amazonaws.com/dev/entries --data '{ "body" : "Learn Serverless" }'
 ```
 
+### Create with random content
+
+```bash
+curl -X POST https://XXXX.execute-api.region.amazonaws.com/dev/entriesRandom
+```
+
+
+
 ### Read all
 
 
