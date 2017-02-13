@@ -1,58 +1,59 @@
 # Frontend Exercise Backend
 
-## Installation
+## Preparations
 
-Make sure that you use Serverless v1.
+1. Make sure you have Node.JS installed: https://nodejs.org/en/download/
+1. Clone the git repository
+1. Run `npm install` inside the repo directory
+1. Run `npm start` to run the server
 
-1. Run `npm install -g serverless`
-2. Run `npm install`
-3. Deploy with `serverless deploy`
+You should see the following message in the console:
 
-## How to use
+`Comments server listening on port 3000!`
 
-Simply perform requests against the exposed endpoints:
+To see that it's working, open the browser in `http://localhost:3000/comments`
 
-### Create
+## Exercise Instructions
 
-```bash
-curl -X POST https://XXXX.execute-api.region.amazonaws.com/dev/entries --data '{ "body" : "Learn Serverless" }'
+1. Create a web page in either __AngularJS (1.x or 2.x) or React__ that contains a comments feed with the ability to edit and delete existing comments.
+There is no need to implement the backend API, we've already done that for you (see details below).
+
+1. Use the [designs](./designs) as a guideline for your web page. The designs include:
+    * Basic mockup for the comments list (feel free to go crazy with your own design)
+    * A complete design for the popups
+
+1. Each comment element in the feed should contain:
+    * Comment
+    * Two buttons - delete and edit, each opens the matching popup per the designs
+
+1. An understandable README.md is required, with running instructions.
+
+1. Extra bonus for writing reusable components and blazing design!
+
+## Consuming the Backend API:
+
+### Getting all the comments:
+
+GET request to `http://localhost:3000/comments`. Returns a JSON array of the following objects:
+```json
+{ "comment": "bla bla bla", "id": "1a8ec1c0-a5f6-11e6-9212-e3b737d6fe15", "updatedAt": 1478638710748, "email": "me@acme.com" }
 ```
 
-### Create with random content
+### Updating a comment:
 
-```bash
-curl -X POST https://XXXX.execute-api.region.amazonaws.com/dev/entriesRandom
+PUT request to `http://localhost:3000/comments/:id`, where `:id` is the id of the comment.
+Expects a JSON with the following structure:
+```
+{ "comment": "new content for comment" }
 ```
 
+### Deleting a comment:
 
+DELETE request to `http://localhost:3000/comments/:id`, where `:id` is the id of the comment.
 
-### Read all
+## Final Notes
 
+A working solution isn't the only requirement. The code should be simple (to read and understand), robust and testable (you don't have to write the actual tests though..).
 
-```bash
-curl https://XXXX.execute-api.region.amazonaws.com/dev/entries
-```
+Create a repository in Github and send me the link when you're ready.
 
-### Read one
-
-```bash
-curl https://XXXX.execute-api.region.amazonaws.com/dev/entries/<id>
-```
-
-### Update
-
-```bash
-curl -X PUT https://XXXX.execute-api.region.amazonaws.com/dev/entries/<id> --data '{ "body" : "Understand Serverless" }'
-```
-
-### DELETE
-
-```bash
-curl -X DELETE https://XXXX.execute-api.region.amazonaws.com/dev/entries/<id>
-```
-
-## AWS services used
-
-- Lambda
-- API Gateway
-- DynamoDB
