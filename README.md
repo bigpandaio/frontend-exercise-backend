@@ -15,7 +15,7 @@ To see that it's working, open the browser in `http://localhost:3000/comments`
 
 ## Exercise Instructions
 
-1. Create a web page in either __AngularJS (1.x or 2.x) or React__ that contains a comments feed with the ability to edit and delete existing comments.
+1. Create a web page in React__ that contains a comments feed with the ability to edit and delete existing comments.
 There is no need to implement the backend API, we've already done that for you (see details below).
 
 1. Use the [designs](./designs) as a guideline for your web page. The designs include:
